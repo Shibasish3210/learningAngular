@@ -1,0 +1,10 @@
+<nav class="flex bg-orange-400 py-2 px-4">
+    <ul class="flex gap-4 list-none">
+        <li routerLink="/" class="cursor-pointer px-4 py-2 text-white">Home</li>
+        <li routerLink="/about" class="cursor-pointer px-4 py-2 text-white">About</li>
+        <li routerLink="/profile" class="cursor-pointer px-4 py-2 text-white">Profile</li>
+        <li routerLink="/login" class="cursor-pointer px-4 py-2 text-white">Login</li>
+        <li routerLink="/form" class="cursor-pointer px-4 py-2 text-white">Reactive Form</li>
+    </ul>
+    <button *ngIf="sharedSrvc.getisLoggedIn()" (click)="deleteUser()" type="button" class="py-2 px-4 bg-lime-900 text-lime-300 rounded-md ml-auto">Log Out</button>
+</nav>

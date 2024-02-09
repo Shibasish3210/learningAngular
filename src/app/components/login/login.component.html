@@ -1,0 +1,19 @@
+<form #myForm="ngForm" class="min-h-[89vh] p-2 m-auto w-4/6">
+    <h1 class="text-xl text-center">Login Form</h1>
+    <div class="flex gap-4 mt-8">
+        <label for="userName">UserName :</label>
+        <input pattern=".{.9,}" required [(ngModel)]="name" type="text" id="userName" name="userName" class="w-[85%] outline-none border-2 focus:border-blue-400">
+    </div>
+    <div class="flex gap-4 mt-8">
+        <span>Role :</span>
+        <div class="flex gap-2">
+            <input [(ngModel)]="role" type="radio" id="admin" value="admin"  name="userRole" >
+            <label for="admin">Admin</label>
+            <input [(ngModel)]="role" type="radio" value="user"  name="userRole">
+            <label for="user">User</label>
+        </div>
+    </div>
+    <div class="text-center">
+        <button (click)="saveUser(name, role)" type="button" class="py-2 px-4 bg-lime-900 text-lime-300 rounded-md mt-8 mr-2">Submit</button>
+    </div>
+</form>

@@ -2,12 +2,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-::-webkit-scrollbar{
-    display: none;
+::-webkit-scrollbar {
+  display: none;
 }
-input{
-    border: 2px solid black;
-    margin: 8px;
-    width:400px;
+
+input {
+  border: 2px solid black;
+  margin: 8px;
+  width: 400px;
 }
