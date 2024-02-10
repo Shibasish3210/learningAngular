@@ -1,6 +1,15 @@
 <div>
-    <img [src]="" alt="">
     <div>
-        {{userDetails | json}}
+        <button (click)="getUserData()" class="py-2 px-4 rounded-md bg-lime-800 text-lime-200 my-8" >Get Users</button>
+    </div>
+    <div class="w-4/6 m-auto flex flex-col items-center justify-center bg-slate-400 rounded-md min-h-[400px]" *ngIf="userDetails">
+        <img [src]="userDetails?.picture?.large" alt="userImage">
+        <p>
+            Name : {{userDetails?.name?.title+' '+userDetails?.name?.first+' '+userDetails?.name?.last}}
+        </p>
+        <p>Gender : {{userDetails?.gender?.toUpperCase()}}</p>
+        <p>
+            Location : {{userDetails?.location?.street?.number+ ' ' + userDetails?.location?.street?.name + ', ' +userDetails?.location?.city + ', ' + userDetails?.location?.state + ', '+ userDetails?.location?.country + ', ' + userDetails?.location?.postcode }}
+        </p>
     </div>
 </div>

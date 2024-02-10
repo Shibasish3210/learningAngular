@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ApiService } from 'src/app/service/api.service';
 
 type UserData = {
   gender: string;
@@ -68,13 +70,27 @@ type UserData = {
 
 export class ProfileCardsComponent {
   
-  @Input() userDetails : any = null; 
-  
-  constructor(){
-    this.getImage();
+  userDetails: any = null;
+  subs: Subscription[] = [];
+
+  constructor(private apiSrvc: ApiService){}
+
+  getUserData():void{
+    const subscribedCall = this.apiSrvc.getUserData().subscribe({
+      next: (data:any) =>{
+        this.userDetails = data.results[0];
+      },
+      error: (err:string) =>{
+        console.log(err);
+      }
+    });
+    
+    this.subs.push(subscribedCall);
   }
-  getImage() : void {
-     console.log(this.userDetails);
+  
+  
+  ngOnDestroy(): void {
+    this.subs.forEach(sub=>sub.unsubscribe());
   }
   
 }

@@ -6,6 +6,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AboutComponent } from './components/about/about.component';
 import { AuthGuard } from './guard/auth.guard';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { ProfileCardsComponent } from './components/profile-cards/profile-cards.component';
+import { SubAboutComponent } from './components/sub-about/sub-about.component';
 
 const routes: Routes = [
   {
@@ -16,7 +18,11 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    children:[{
+      path: 'subabout/:id',
+      component: SubAboutComponent
+    }]
   },
   {
     path: 'login',
@@ -25,7 +31,12 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
+    children: [{
+      path: 'user',
+      component: ProfileCardsComponent,
+    }]
   },
   {
     path: 'form',

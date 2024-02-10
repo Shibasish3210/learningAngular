@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProfileCardsComponent } from './components/profile-cards/profile-cards.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { SubAboutComponent } from './components/sub-about/sub-about.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     FooterComponent,
     AboutComponent,
     ProfileCardsComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    SubAboutComponent
   ],
   imports: [
     BrowserModule,

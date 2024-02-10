@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
 
+  constructor(private router: Router){};
+  redirectTo(num: number): void {
+    // this.router.navigateByUrl(`/about/subabout/${num}`);
+    this.router.navigate([`/about/subabout/`, num]);
+  }
+
+  
 }

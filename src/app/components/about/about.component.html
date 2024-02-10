@@ -1,1 +1,8 @@
-<p class="min-h-[89vh] p-2">about works!</p>
+<div class="min-h-[89vh] p-2">
+    <div class="flex flex-col gap-4">
+        <button (click)="redirectTo(1)" class="py-2 px-4 rounded-md text-lime-200 bg-lime-900 w-fit">Go to About 1</button>
+        <button (click)="redirectTo(2)" class="py-2 px-4 rounded-md text-lime-200 bg-lime-900 w-fit">Go to About 2</button>
+        <button (click)="redirectTo(3)" class="py-2 px-4 rounded-md text-lime-200 bg-lime-900 w-fit">Go to About 3</button>
+    </div>
+    <router-outlet/>
+</div>

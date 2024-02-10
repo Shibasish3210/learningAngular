@@ -1,6 +1,5 @@
 <div class="min-h-[89vh] p-2">
     <!-- <img src="" alt=""> -->
-    <button (click)="getUserData()" class="py-2 px-4 rounded-md bg-lime-800 text-lime-200">Get Users</button>
-    <!-- {{userData | json}} -->
-    <app-profile-cards [userDetails]="userData"/>
+    <button (click)="navigateUser()" class="py-2 px-4 rounded-md bg-lime-800 text-lime-200">Go To Users( Admin Only )</button>
+    <router-outlet/>
 </div>
